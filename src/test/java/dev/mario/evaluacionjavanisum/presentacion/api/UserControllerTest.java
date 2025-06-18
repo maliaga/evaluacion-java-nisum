@@ -68,7 +68,7 @@ class UserControllerTest {
                                 "        }\n" +
                                 "    ]\n" +
                                 "}"))
-                .andExpect(status().isOk());
+                .andExpect(status().isCreated());
     }
 
     @Test

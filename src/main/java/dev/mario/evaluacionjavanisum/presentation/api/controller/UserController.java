@@ -7,6 +7,8 @@ import dev.mario.evaluacionjavanisum.presentation.api.model.UserResponse;
 import dev.mario.evaluacionjavanisum.presentation.api.model.valitation.Validation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,20 +31,17 @@ public class UserController {
 
     // Create a new user
     @PostMapping("/user")
-    public UserResponse createUser(@RequestBody UserRequest userRequest) {
+    public ResponseEntity<UserResponse> createUser(@RequestBody UserRequest userRequest) {
         log.info("Creating user: {}", userRequest);
 
-        // Validate email
         validation.isValidEmail(userRequest.getEmail());
-
-        // Validate password
         validation.isValidPassword(userRequest.getPassword());
 
         UserDom userdom = UserRequest.toDomain(userRequest);
-
         log.info("Creating user dom: {}", userdom);
 
-        return userService.createUser(userdom);
+        UserResponse response = userService.createUser(userdom);
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
     // Delete a user by ID
