@@ -12,8 +12,8 @@ Aplicación de ejemplo desarrollada con Spring Boot, JPA, H2 y documentación au
 
 1. Clona el repositorio:
    ```sh
-   git clone https://github.com/tu-usuario/tu-repo.git
-   cd tu-repo
+   git clone https://github.com/maliaga/evaluacion-java-nisum.git
+   cd evaluacion-java-nisum
 
 ## Compila y ejecuta la aplicación:
 
