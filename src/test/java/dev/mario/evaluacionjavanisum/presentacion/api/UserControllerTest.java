@@ -76,6 +76,6 @@ class UserControllerTest {
         UUID id = UUID.randomUUID();
 
         mockMvc.perform(delete("/api/v1/user/" + id))
-                .andExpect(status().isOk());
+                .andExpect(status().isNoContent());
     }
 }
