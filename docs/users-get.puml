@@ -1,0 +1,7 @@
+@startuml
+start
+:Recibe petición GET /users;
+:Llama a userService.getAllUsers();
+:Retorna lista de UserResponse;
+stop
+@enduml

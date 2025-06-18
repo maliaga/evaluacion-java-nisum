@@ -1,0 +1,20 @@
+@startuml
+start
+:Recibe petición POST /users;
+:Log "Creating user";
+:Validar email;
+if (Email válido?) then (Sí)
+  :Validar password;
+  if (Password válido?) then (Sí)
+    :Convertir UserRequest a UserDom;
+    :Log "Creating user dom";
+    :Crear usuario con userService;
+    :Retornar UserResponse;
+  else (No)
+    :Lanzar error de validación de password;
+  endif
+else (No)
+  :Lanzar error de validación de email;
+endif
+stop
+@enduml

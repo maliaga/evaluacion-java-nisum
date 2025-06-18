@@ -1,0 +1,11 @@
+@startuml
+start
+:Llamar a deleteUser(id);
+:Buscar usuario por id;
+if (Usuario existe?) then (Sí)
+  :Eliminar usuario del repositorio;
+else (No)
+  :Lanzar error de no encontrado;
+endif
+stop
+@enduml
