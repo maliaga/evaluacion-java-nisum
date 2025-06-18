@@ -3,7 +3,6 @@ package dev.mario.evaluacionjavanisum.presentacion.api;
 import dev.mario.evaluacionjavanisum.domain.model.UserDom;
 import dev.mario.evaluacionjavanisum.domain.port.primary.UserService;
 import dev.mario.evaluacionjavanisum.presentation.api.controller.UserController;
-import dev.mario.evaluacionjavanisum.presentation.api.model.UserRequest;
 import dev.mario.evaluacionjavanisum.presentation.api.model.UserResponse;
 import dev.mario.evaluacionjavanisum.presentation.api.model.valitation.Validation;
 import org.junit.jupiter.api.Test;
@@ -18,7 +17,6 @@ import java.util.Collections;
 import java.util.UUID;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
